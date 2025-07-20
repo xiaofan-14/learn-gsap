@@ -1,6 +1,30 @@
+import { useGSAP } from "@gsap/react";
 import { navLinks } from "../../constants";
+import gsap from "gsap";
 
 export default function Navbar() {
+  useGSAP(() => {
+    const navTweent = gsap.timeline({
+      scrollTrigger: {
+        trigger: "nav",
+        start: "bottom top",
+      },
+    });
+
+    navTweent.fromTo(
+      "nav",
+      {
+        backgroundColor: "transparent",
+      },
+      {
+        backgroundColor: "#00000050",
+        backgroundFilter: "blur(10px)",
+        duration: 1,
+        ease: "power1.inOut",
+      }
+    );
+  });
+
   return (
     <nav>
       <div>
