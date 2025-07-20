@@ -111,7 +111,7 @@ export default function Hero() {
           ref={videoRef}
           src="/videos/output.mp4"
           muted
-          playInline
+          playsInline
           preload="auto"
         />
       </div>
